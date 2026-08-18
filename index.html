@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iLanga Coils — a three-step wash-day system for coils, curls and protective styles. Made in South Africa.">
+  <title>iLanga Coils</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#home">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="3.2" fill="currentColor"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.4" d="M16 6.2a9.8 9.8 0 1 1-8.5 4.9"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.4" d="M16 2.8a13.2 13.2 0 1 1-11.4 6.6"/>
+        </svg>
+        iLanga Coils
+      </a>
+
+      <div class="header-links">
+        <nav class="nav" id="nav">
+          <a href="#shop">Shop</a>
+          <a href="#routine">Routine</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <button class="cart-btn" id="cartButton" type="button">
+          Cart <span id="cartCount">0</span>
+        </button>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Haircare · South Africa</p>
+          <h1>Care for<br>coils.</h1>
+          <p class="lede">
+            A three-step wash-day system for afro-textured hair and protective styles,
+            built around shea butter, rosemary and peppermint.
+          </p>
+          <a class="btn" href="#shop">Shop the system</a>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="Clarifying Shampoo - Rosemary Blend.jpeg"
+            alt="iLanga Coils clarifying shampoo, rosemary blend, 250ml"
+            width="900"
+            height="1200"
+            fetchpriority="high"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="routine" id="routine">
+      <div class="wrap">
+        <ol class="steps">
+          <li>
+            <span>Cleanse</span>
+            <strong>Clarifying Shampoo</strong>
+            <p>Lifts build-up without stripping the strand.</p>
+          </li>
+          <li>
+            <span>Soften</span>
+            <strong>Conditioner</strong>
+            <p>Restores slip so detangling is gentler.</p>
+          </li>
+          <li>
+            <span>Seal</span>
+            <strong>Hair Growth Oil</strong>
+            <p>Rosemary blend for wash day and in between.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The collection</p>
+            <h2>The range.</h2>
+          </div>
+          <div class="section-head-aside">
+            <p>Start with the sequence, then add what your hair actually needs.</p>
+            <button class="btn" type="button" data-product="3-Step Growth System">Add the system · R699</button>
+          </div>
+        </div>
+
+        <ul class="products">
+          <li>
+            <article class="product">
+              <div class="product-image fill">
+                <img src="Clarifying Shampoo - Rosemary Blend2.jpeg" alt="Clarifying Shampoo, rosemary blend, 250ml" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Step one · 250ml</p>
+                <h3>Clarifying Shampoo</h3>
+                <button type="button" data-product="Clarifying Shampoo">Add</button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product">
+              <div class="product-image">
+                <img src="Clarifying Conditioner - Rosemary Blend2.jpeg" alt="Conditioner, rosemary blend, 250ml" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Step two · 250ml</p>
+                <h3>Conditioner</h3>
+                <button type="button" data-product="Conditioner">Add</button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product">
+              <div class="product-image">
+                <img src="Hair Growth Oil1.jpeg" alt="Hair Growth Oil, rosemary blend, 100ml" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Step three · 100ml</p>
+                <h3>Hair Growth Oil</h3>
+                <button type="button" data-product="Hair Growth Oil">Add</button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product">
+              <div class="product-image fill">
+                <img src="Premium Shea Butter Small1.png" alt="Shea butter, unscented blend, 100ml" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Unscented · 100ml</p>
+                <h3>Shea Butter</h3>
+                <button type="button" data-product="Shea Butter 100ml">Add</button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product">
+              <div class="product-image">
+                <img src="Premium Shea Butter Large1.png" alt="Shea butter, scented blend, 250ml" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Scented · 250ml</p>
+                <h3>Shea Butter</h3>
+                <button type="button" data-product="Shea Butter 250ml">Add</button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="product">
+              <div class="product-image fill">
+                <img src="iLanga Coils Hair Bonnet2.jpeg" alt="Woman wearing the iLanga Coils satin hair bonnet" width="800" height="1000" loading="lazy">
+              </div>
+              <div class="product-meta">
+                <p>Protective wear</p>
+                <h3>Satin Hair Bonnet</h3>
+                <button type="button" data-product="Satin Hair Bonnet">Add</button>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ingredients" id="ingredients">
+      <div class="wrap ingredients-inner">
+        <div>
+          <p class="eyebrow">Inside the formulas</p>
+          <h2>Four ingredients.</h2>
+        </div>
+        <dl>
+          <div>
+            <dt>Shea butter</dt>
+            <dd>Helps hold moisture in after washing.</dd>
+          </div>
+          <div>
+            <dt>Castor oil</dt>
+            <dd>A rich, slow-absorbing oil used across the range.</dd>
+          </div>
+          <div>
+            <dt>Rosemary</dt>
+            <dd>A traditional botanical in the scalp-focused formulas.</dd>
+          </div>
+          <div>
+            <dt>Peppermint</dt>
+            <dd>The cooling, fresh note of the routine.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-inner">
+        <div>
+          <p class="eyebrow">Before you buy</p>
+          <h2>Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Will this work on my hair type?</summary>
+            <p>It is made for afro-textured hair, including type 3 and type 4 textures, and for protective styles such as braids, twists and locs.</p>
+          </details>
+          <details>
+            <summary>How long before I notice a difference?</summary>
+            <p>Give any routine a full cycle before judging it. Hair changes gradually. The first change is often a better wash day and less breakage.</p>
+          </details>
+          <details>
+            <summary>Why buy the system instead of one product?</summary>
+            <p>The three products are meant to be used in sequence. The bundle also costs less than buying them separately.</p>
+          </details>
+          <details>
+            <summary>How does delivery work?</summary>
+            <p>We deliver nationwide. Courier timing will be confirmed with your order. Free delivery over R650.</p>
+          </details>
+          <details>
+            <summary>Can I order on WhatsApp?</summary>
+            <p>Yes. Send your order and delivery address and the team can confirm it directly.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#home">iLanga Coils</a>
+        <p>Wash-day care for coils, curls and protective styles. Formulated and shipped from South Africa.</p>
+      </div>
+
+      <form id="newsletterForm" class="signup">
+        <label for="email">Notes, restocks, new releases</label>
+        <div class="signup-row">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+          <button class="btn" type="submit">Join</button>
+        </div>
+        <p class="signup-note" id="newsletterMessage">One useful email a month. Unsubscribe any time.</p>
+      </form>
+
+      <div class="footer-meta">
+        <p>Stocked on Takealot, Amazon.co.za and eXobe.</p>
+        <p>© 2026 iLanga Coils</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
