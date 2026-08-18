@@ -52,4 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
     email.value = "";
     newsletterMessage.textContent = "You’re on the list.";
   });
+
+  const palettes = document.querySelectorAll(".palette-bar [data-palette]");
+
+  function setPalette(name) {
+    document.documentElement.setAttribute("data-palette", name);
+    palettes.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-palette") === name ? "true" : "false");
+    });
+  }
+
+  palettes.forEach(function (button) {
+    button.addEventListener("click", function () {
+      setPalette(button.getAttribute("data-palette"));
+    });
+  });
 });
