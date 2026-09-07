@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       cart += 1;
       cartCount.textContent = cart;
-      notify((button.dataset.product || "Product") + " added to cart");
+      notify((button.dataset.product || "Product") + " added to bag");
     });
   });
 
   cartButton.addEventListener("click", function () {
-    notify(cart ? "Cart has " + cart + " item" + (cart === 1 ? "" : "s") : "Your cart is empty");
+    notify(cart ? "Bag has " + cart + " item" + (cart === 1 ? "" : "s") : "Your bag is empty");
   });
 
   newsletterForm.addEventListener("submit", function (e) {
@@ -53,18 +53,25 @@ document.addEventListener("DOMContentLoaded", function () {
     newsletterMessage.textContent = "You’re on the list.";
   });
 
-  const palettes = document.querySelectorAll(".palette-bar [data-palette]");
+  const themeButtons = document.querySelectorAll(".path-switch [data-theme]");
+  const copyBlocks = document.querySelectorAll("[data-copy]");
 
-  function setPalette(name) {
-    document.documentElement.setAttribute("data-palette", name);
-    palettes.forEach(function (button) {
-      button.setAttribute("aria-pressed", button.getAttribute("data-palette") === name ? "true" : "false");
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem("ilanga-theme", theme); } catch (e) {}
+    themeButtons.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-theme") === theme ? "true" : "false");
+    });
+    copyBlocks.forEach(function (el) {
+      el.hidden = el.getAttribute("data-copy") !== theme;
     });
   }
 
-  palettes.forEach(function (button) {
+  themeButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      setPalette(button.getAttribute("data-palette"));
+      setTheme(button.getAttribute("data-theme"));
     });
   });
+
+  setTheme(document.documentElement.getAttribute("data-theme") || "girls");
 });
