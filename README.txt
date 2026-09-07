@@ -1,6 +1,7 @@
-iLanga Coils — static HTML/CSS/JS site.
+iLanga Coils — static drafts.
 
-Open index.html directly in your browser.
-The page is a quiet, single-column shop: hero, three-step routine, products, ingredients, FAQ.
-Cart and newsletter are front-end only until a backend is connected.
-The system price is R699. Individual product prices are omitted until they are confirmed.
+Open index.html for the pink-and-black editorial draft.
+Open rosemary.html for the rosemary / herbarium draft.
+Open simple.html for the earlier quiet version.
+
+Cart and newsletter are front-end only.
