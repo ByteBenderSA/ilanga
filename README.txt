@@ -1,7 +1,7 @@
 iLanga Coils — static drafts.
 
-Open index.html for the pink-and-black editorial draft.
+Open index.html for the current unisex black-and-white draft.
 Open rosemary.html for the rosemary / herbarium draft.
 Open simple.html for the earlier quiet version.
 
-Cart and newsletter are front-end only.
+Shop links go to Takealot and eXobe. Newsletter is front-end only.
