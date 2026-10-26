@@ -260,12 +260,16 @@ h3 { font-size: 1.15rem; }
 }
 
 .product {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--white);
-  color: inherit;
 }
 
 .product-image {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
   aspect-ratio: 4 / 5;
   background: var(--white);
   overflow: hidden;
@@ -275,12 +279,20 @@ h3 { font-size: 1.15rem; }
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 500ms var(--ease);
 }
 
 .product-image.fill img { object-fit: cover; }
+.product-image:hover img { transform: scale(1.03); }
 
-.product-meta { padding: 0.85rem 0.8rem 1rem; }
-.product-meta p {
+.product-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 0.8rem 1rem;
+}
+
+.product-line {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -289,20 +301,197 @@ h3 { font-size: 1.15rem; }
 
 .product-meta h3 { margin-top: 0.35rem; }
 
-.product-meta span {
-  display: block;
-  margin-top: 0.45rem;
+.product-tag {
+  margin-top: 0.35rem;
   color: var(--mute);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.product-price {
+  margin-top: 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
 }
 
-.product-shop {
-  color: var(--ink);
-  font-size: 0.88rem;
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
-.product:hover .product-shop { text-decoration: underline; text-underline-offset: 0.16em; }
+.product-actions .btn {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  font-size: 0.86rem;
+}
+
+.gallery {
+  padding: clamp(3.2rem, 7vw, 5.2rem) 0;
+  background: var(--white);
+}
+
+.gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-head h2 { margin-top: 0.45rem; }
+.gallery-head > p { max-width: 32ch; color: var(--mute); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1.1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  height: clamp(380px, 44vw, 560px);
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-shea img { object-position: center 40%; }
+.gallery-oil img { object-position: center 35%; }
+
+.popup { padding: clamp(3.2rem, 7vw, 5.2rem) 0; }
+
+.popup-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.popup-main img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.popup-copy h2 { margin: 0.5rem 0 0.9rem; }
+.popup-copy p { max-width: 32ch; color: var(--mute); }
+
+.popup-copy img {
+  width: 100%;
+  margin-top: 1.8rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+html:has(.detail[open]) { overflow: hidden; }
+
+.detail {
+  width: min(calc(100% - 2 * var(--gutter)), 960px);
+  max-width: none;
+  max-height: min(88dvh, 760px);
+  padding: 0;
+  border: 0;
+  background: var(--white);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.detail[open] { animation: detail-in 260ms var(--ease); }
+
+.detail::backdrop {
+  background: rgba(17, 17, 17, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes detail-in {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+.detail-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: var(--white);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.detail-close:hover { background: var(--paper); }
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  max-height: inherit;
+}
+
+.detail-image { background: var(--white); }
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-image.fill img { object-fit: cover; }
+
+.detail-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: min(88dvh, 760px);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.detail-body h2 {
+  margin: 0.5rem 0 0.4rem;
+  padding-right: 2.5rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+}
+
+.detail-price { margin-bottom: 1.1rem; font-weight: 600; }
+
+.detail-body > p:not(.kicker, .detail-price) {
+  max-width: 54ch;
+  margin-bottom: 0.8rem;
+  color: var(--mute);
+}
+
+.detail-list { margin: 1.4rem 0 1.6rem; }
+
+.detail-list ul { margin: -0.15rem 0 1.1rem; }
+
+.detail-list li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: var(--mute);
+}
+
+.detail-list li + li { margin-top: 0.35rem; }
+
+.detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  background: var(--ink);
+}
+
+.detail-list b { color: var(--ink); font-weight: 600; }
+
+.detail-list details p + p { margin-top: -0.6rem; }
 
 .ingredients {
   display: grid;
@@ -463,9 +652,35 @@ h3 { font-size: 1.15rem; }
   .hero,
   .ritual-inner,
   .ingredients,
+  .popup-inner,
   .footer-grid { grid-template-columns: 1fr; }
   .products { grid-template-columns: 1fr 1fr; }
-  .shop-head { flex-direction: column; align-items: start; }
+  .shop-head,
+  .gallery-head { flex-direction: column; align-items: start; }
+
+  .hero-photo img { object-position: center 30%; }
+
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid figure { height: auto; aspect-ratio: 3 / 4; }
+  .gallery-grid .gallery-wide { grid-column: 1 / -1; order: -1; aspect-ratio: 4 / 3; }
+
+  .popup-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.4rem; align-items: start; }
+  .popup-copy img { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; }
+}
+
+@media (max-width: 720px) {
+  .detail {
+    width: 100%;
+    max-height: 92dvh;
+    margin: auto 0 0;
+  }
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 92dvh;
+  }
+  .detail-image { flex-shrink: 0; height: 30dvh; }
+  .detail-body { flex: 1; min-height: 0; max-height: none; }
 }
 
 @media (max-width: 560px) {
@@ -473,6 +688,9 @@ h3 { font-size: 1.15rem; }
   .products { grid-template-columns: 1fr; }
   .ingredients dl > div { grid-template-columns: 1fr; gap: 0.2rem; }
   .ingredients-photo img { min-height: 400px; }
+  .gallery-grid { gap: 0.7rem; }
+  .popup-copy { display: block; }
+  .popup-copy img { margin-top: 1.4rem; }
   .signup-row { flex-direction: column; }
   .footer-end { flex-direction: column; }
 }

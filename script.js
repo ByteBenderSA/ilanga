@@ -18,6 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const detail = document.getElementById("detail");
+  const detailContent = document.getElementById("detailContent");
+
+  document.querySelectorAll("[data-detail]").forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      const template = document.getElementById("detail-" + trigger.dataset.detail);
+      detailContent.replaceChildren(template.content.cloneNode(true));
+      detail.showModal();
+      detail.querySelector(".detail-body").scrollTop = 0;
+    });
+  });
+
+  document.getElementById("detailClose").addEventListener("click", function () {
+    detail.close();
+  });
+
+  // A click on the backdrop lands on the dialog itself.
+  detail.addEventListener("click", function (e) {
+    if (e.target === detail) detail.close();
+  });
+
   newsletterForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const email = document.getElementById("email");
